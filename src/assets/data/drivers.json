@@ -1,0 +1,6 @@
+[
+    {"id":1, "name": "Emma", "contact":  "0234567890", "address": "Lapaz"},
+    {"id":2, "name":"Dan", "contact":"23456789", "address":"Airport"},
+    {"id":3, "name":"Kwesi", "contact":"44567789", "address":"Tema"},
+    {"id":4, "name":"Fred", "contact":"45678890", "address":"Medina"}
+]

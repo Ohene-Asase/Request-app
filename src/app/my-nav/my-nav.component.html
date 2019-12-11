@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      
+       <div>
+      <a mat-list-item    routerLink="./overview">
+      <mat-icon class="sidenav-icon">dashboard</mat-icon>  <p>Overview</p>    </a>
+       
+      <a mat-list-item  routerLink="./schedule">
+        <mat-icon class="sidenav-icon">schedule</mat-icon>  <p>Schedule ride</p>
+
+      </a>
+
+
+      
+      <a mat-list-item  routerLink="./booked">
+      <mat-icon class="sidenav-icon">book</mat-icon> <p>Booked Trips</p>
+      </a>
+      
+      <a mat-list-item routerLink="./drivers">
+      <mat-icon class="sidenav-icon">people</mat-icon> <p>Drivers</p>
+      </a>
+
+     
+      
+      <a mat-list-item  routerLink="./trip">
+      <mat-icon class="sidenav-icon">directions_car</mat-icon>  <p>Trip History</p>
+      
+      </a>
+
+
+
+
+
+
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar  >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Welcome Administrator</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

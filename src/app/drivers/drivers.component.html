@@ -1,0 +1,51 @@
+<div class="searching">
+  <button mat-raised-button (click)="OnCreate()">
+    <mat-icon>add</mat-icon>
+  </button>
+<mat-form-field class="search-field"  floatLabel="never">
+  <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+  <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onClear()">
+    <mat-icon>close</mat-icon>
+
+  </button>
+</mat-form-field>
+
+
+</div>
+
+<div class="container">
+    <mat-table [dataSource]="Dab">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="contact">
+          <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="address">
+          <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+        </ng-container>
+         
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+          <button  (click)="isClicked = !isClicked" [class.myClass]="isClicked" mat-icon-button><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn"><mat-icon>delete_icon</mat-icon></button>
+          </mat-cell>
+    </ng-container>
+        
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-card *ngIf="spinner" fxLayoutAlign="center center">
+        <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+          </mat-card>
+</div>
