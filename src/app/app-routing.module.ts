@@ -8,6 +8,7 @@ import { BookedComponent } from './booked/booked.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CarsComponent } from './cars/cars.component';
 
 const routes: Routes = [
  {path : '', component : LoginComponent},
@@ -22,6 +23,7 @@ children: [
   {path:'drivers', component:DriversComponent},
   {path:'schedule', component:ScheduleComponent},
   {path:'settings', component:SettingsComponent},
+  {path:'cars', component:CarsComponent},
   {path:'', redirectTo: '/overview', pathMatch: 'full'}
 ]
 

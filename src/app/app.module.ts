@@ -32,6 +32,9 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { DashComponent } from './dash/dash.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CarsComponent } from './cars/cars.component';
+import { AddComponent } from './add/add.component';
+
 
 //I keep the new line
 /*const appRoutes: Routes = [
@@ -57,7 +60,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MydashComponent,
     DeformComponent,
     LineChartComponent,
-    DashComponent
+    DashComponent,
+    CarsComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -94,13 +99,19 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSelectModule,
     MatChipsModule,
     MatSlideToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    
+  
 
     /* RouterModule.forRoot(appRoutes)*/
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
-  entryComponents: [DeformComponent]
+  entryComponents: [DeformComponent,
+                    AddComponent
+] 
+                   
+  
 })
 export class AppModule {
 }

@@ -1,0 +1,42 @@
+<div class="container">
+<form [formGroup]="form" (ngSubmit)="add(form.value)">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>New Car</mat-card-title>
+    <button class="btn" mat-stroked-button (click)="Close()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-card-header>
+
+
+<mat-card-content fxLayout="column">
+  <mat-form-field>
+    <input matInput placeholder="car brand" formControlName="car_brand">
+  </mat-form-field>
+ 
+<mat-form-field>
+  <input matInput placeholder="car model" formControlName="car_model">
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput placeholder="car number" formControlName="car_no">
+</mat-form-field>
+
+<mat-card-actions fxLayoutAlign="center center">
+<button mat-raised-button color="primary" style="width: 30em;" type="submit">add</button>
+</mat-card-actions>
+</mat-card-content>
+
+</mat-card>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {DataService} from '../data.service';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import {FormControl} from '@angular/forms'
+import {FormControl,FormGroup, FormBuilder} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 import {Observable, BehaviorSubject} from 'rxjs'
 import {Type} from '../Type';
 
@@ -28,11 +29,18 @@ Can: MatTableDataSource<any>
 trippy= true;
 trip= 'ongoing'
 
-  displayedColumns: string[] = ['Name', 'Location', 'Reason', 'Number', 'Date Requested','Assign Driver', 'Status','Trips']
+  displayedColumns: string[] = ['Name', 'Location', 'Reason', 'Number', 'Date Requested','Assign Driver', 'approve','end']
   @ViewChild(MatPaginator )  paginator: MatPaginator;
   constructor(private _dataservice: DataService
     
     ) { }
+
+    book:FormGroup = new FormGroup({
+    ongoing: new FormControl(''),
+    endTrip: new FormControl(''),
+    approved: new FormControl('')
+
+    });
 
   ngOnInit() {
     this._dataservice.getHistory()

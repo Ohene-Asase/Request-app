@@ -1,3 +1,5 @@
+
+
 <div class="container">
     <mat-table [dataSource]="Can">
     <ng-container matColumnDef="Name">
@@ -41,36 +43,25 @@
             </mat-cell>
             </ng-container>
               
-                <ng-container matColumnDef="Status">
-                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                    <mat-cell *matCellDef="let row ">
-                      <div style="margin:30px ;">
-                        <mat-chip-list>
-                          <mat-chip *ngIf="!row.toggle" [ngClass]="!row.toggle ? 'red' : ''">Pending</mat-chip>
-                          <mat-chip *ngIf="row.toggle" [ngClass]="row.toggle ? 'green' : ''">Approved</mat-chip>
-       
-                        </mat-chip-list>
-                        <mat-slide-toggle [(ngModel)]="row.toggle"></mat-slide-toggle>
-                      </div>
-                      </mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="Trips">
-                      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                      <mat-cell *matCellDef="let row ">
-                        <div style="margin:30px ;">
-                          <mat-chip-list>
-                            <mat-chip *ngIf="!row.trippy" [ngClass]="!row.trippy ? 'red' : ''">Ongoing</mat-chip>
-                            <mat-chip *ngIf="row.trippy" [ngClass]="row.trippy ? 'green' : ''">Completed</mat-chip>
-         
-                          </mat-chip-list>
-                          <mat-slide-toggle [(ngModel)]="row.trippy"></mat-slide-toggle>
-                       </div>
-                        </mat-cell>
-                    </ng-container>
+            <ng-container matColumnDef="approve">
+              <mat-header-cell  *matHeaderCellDef> </mat-header-cell>
+              <mat-cell *matCellDef="let row" >
+                <div style="margin: 10px;">
+                   <button mat-raised-button color="primary">Approve Ride</button>
+                   </div>
+              </mat-cell>
+            </ng-container>
   
                   
-
+            <ng-container matColumnDef="end">
+              <mat-header-cell  *matHeaderCellDef> </mat-header-cell>
+              <mat-cell *matCellDef="let row" >
+              
+                   <button mat-raised-button color="accent">End trip</button>
+                   
+              </mat-cell>
+            </ng-container>
+  
               
                   
                 
@@ -89,7 +80,7 @@
           <mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]"[pageSize]="10"></mat-paginator>
           
          </div>
-       
+      
 
       
         

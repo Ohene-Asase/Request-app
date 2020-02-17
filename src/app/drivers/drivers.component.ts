@@ -18,7 +18,7 @@ export class DriversComponent implements OnInit {
 
  Dab: MatTableDataSource<any>
  
-displayedColumns: string[] = [ 'id','name', 'contact',  'address', 'actions'];
+displayedColumns: string[] = ['id', 'name', 'phone_no', 'email'];
 
 constructor(private _dataservice: DataService,
             private dialog: MatDialog) { 
@@ -29,7 +29,7 @@ constructor(private _dataservice: DataService,
 
 ngOnInit() {
    
-  this._dataservice.getDrivers()
+  this._dataservice.getReal()
   .subscribe(data => {
     this.spinner = false;
     this.drivers = data;
