@@ -34,6 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CarsComponent } from './cars/cars.component';
 import { AddComponent } from './add/add.component';
+import { TryComponent } from './try/try.component';
 
 
 //I keep the new line
@@ -62,7 +63,8 @@ import { AddComponent } from './add/add.component';
     LineChartComponent,
     DashComponent,
     CarsComponent,
-    AddComponent
+    AddComponent,
+    TryComponent
   ],
   imports: [
     BrowserModule,

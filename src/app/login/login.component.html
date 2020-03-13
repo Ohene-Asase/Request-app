@@ -8,18 +8,19 @@
       <mat-card-title >Login Page</mat-card-title>
     
     </mat-card-header>
-    
+    <form [formGroup]="signedin" (ngSubmit)="login(signedin.value)">
     <mat-card-content fxLayout="column">
       <mat-form-field>
-        <input matInput placeholder="Email">
+        <input matInput placeholder="Email" formControlName="email">
       </mat-form-field>
       <mat-form-field>
-        <input type="password" matInput placeholder="password">
+        <input type="password" matInput placeholder="password" formControlName="password">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" style="width: 100em;" (click)="login()">Login</button>
+      <button mat-raised-button color="primary" style="width: 100em;" type="submit">Login</button>
     </mat-card-actions>
+    </form>
     </mat-card>
     </div>
 </div>

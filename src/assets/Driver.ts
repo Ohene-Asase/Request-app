@@ -1,5 +1,5 @@
 export interface IDriver {
-    Id: number,
+    id: number,
     name: string,
     contact: string,
     address: string
@@ -27,4 +27,21 @@ car_brand: string,
 car_model: string,
 car_no: string
 
+}
+
+export interface IBar {
+    name: string,
+    destination:string,
+    purpose:string,
+    no_of_people:number,
+    date:string
+    id:number
+}
+
+export interface Ifar {
+    name:string,
+    destination:string,
+    purpose:string,
+    no_of_people:number,
+    date: string
 }

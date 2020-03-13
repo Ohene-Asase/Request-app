@@ -1,5 +1,6 @@
 <div class="container">
-<form [formGroup]="form" (ngSubmit)="add(form.value)">
+
+
 <mat-card>
   <mat-card-header>
     <mat-card-title>New Car</mat-card-title>
@@ -8,6 +9,7 @@
 
 
 <mat-card-content fxLayout="column">
+  <form [formGroup]="form" (ngSubmit)="add(form.value)"> 
   <mat-form-field>
     <input matInput placeholder="car brand" formControlName="car_brand">
   </mat-form-field>
@@ -23,19 +25,11 @@
 <mat-card-actions fxLayoutAlign="center center">
 <button mat-raised-button color="primary" style="width: 30em;" type="submit">add</button>
 </mat-card-actions>
+
+</form>
 </mat-card-content>
 
 </mat-card>
-
-
-</form>
-
-
-
-
-
-
-
 
 
 
